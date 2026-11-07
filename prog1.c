@@ -1,61 +1,50 @@
 #include<stdio.h>
+
+ 
 int main()
-{    int n;
-     printf("how many elements? ");
-     scanf("%d",&n);
-     int arr[n];
-     printf(" enter %d number of elements \n",n);
-     for(int i=0;i<n;i++)
+{
+
+    int n,m;
+    int rem, rev=0;
+    printf("Enter any number\n");
+    scanf("%d",&n);
+    m=n;
+    while(m>0)
     {
-       printf(" arr[%d]= ",i);
-        scanf("%d",&arr[i]);
+            rem=m%10;
+            rev=(rev*10)+rem;
+            m=m/10;
     }
-    int max = arr[0];
-      for(int i=0;i<n;i++)// this for loop is to find the maximum
-      {
-        if(arr[i]>max)
-        { 
-            max=arr[i];
-        }
-      }
-      printf("The maximum is =  %d\n",max);
+    while(rev>0)
+    {
+       rem=rev%10;
+       if(rem==0)
+          printf("zero ");
+          else if(rem==1)
+          printf("one ");
+         else if(rem==2)
+          printf("two ");
+         else if(rem==3)
+          printf("three ");
+         else if(rem==4)
+          printf("four ");
+         else if(rem==5)
+          printf("five ");
+         else if(rem==6)
+          printf("six ");
+         else if(rem==7)
+          printf("seven ");
+         else if(rem==8)
+          printf("eight ");
+         else if(rem==9)
+          printf("nine ");
+          rev=rev/10;
+          }
+    while (n > 0 && n % 10 == 0)
+    {
+        printf("zero ");
+        n = n / 10;
+    }
 
-      int min = arr[0];
-      for(int i=0;i<n;i++) // this for loop is to find the minimum
-      {
-        if(arr[i]<min)
-        {
-            min=arr[i];
-        }
-      }
-      printf("The minimum is =  %d\n",min);
-
-      int sum=0;
-      for(int i=0;i<n;i++) // this for loop is to find the average
-      {
-        sum=sum+arr[i];
-      }
-       int avg=sum/n;
-      printf("The average is =  %d\n",avg);
-      
-      int sumofodd=0;
-       for(int i=0;i<n;i++) // this for loop is to find the sum of odd numbers inputted
-      { 
-        if(arr[i]%2!=0)
-        {
-        sumofodd=sumofodd+arr[i];
-        }
-      }
-       printf("The sum of odd numbers is =  %d\n",sumofodd);
-      
-      
-      printf("The numbers inputted in reverse order  :- ");
-      for(int i=n-1;i>0;i--) // this for loop is to print the array contents in reverse order
-      {
-         printf("%d ",arr[i]);  
-      }
-      printf("\n");
-      return 0;
+    return 0;
 }
-    
-    
